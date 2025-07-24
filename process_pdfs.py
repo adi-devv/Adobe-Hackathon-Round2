@@ -4,7 +4,6 @@ import os
 import re
 from collections import defaultdict
 
-
 def extract_headings_and_title(pdf_path):
     document = pymupdf.open(pdf_path)
 
@@ -17,7 +16,7 @@ def extract_headings_and_title(pdf_path):
     for page_number, page in enumerate(document):
         blocks = page.get_text("dict")["blocks"]
         for block in blocks:
-            if block["type"] == 0:  # Text block
+            if block["type"] == 0:
                 for line_idx, line in enumerate(block["lines"]):
                     line_text = " ".join([span["text"].strip() for span in line["spans"]]).strip()
                     if not line_text:
