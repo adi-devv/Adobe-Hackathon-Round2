@@ -4,6 +4,7 @@ import os
 import re
 from collections import defaultdict
 
+
 def extract_headings_and_title(pdf_path):
     document = pymupdf.open(pdf_path)
 
